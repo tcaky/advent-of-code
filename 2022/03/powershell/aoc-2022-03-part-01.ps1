@@ -30,7 +30,6 @@ ForEach($Val in 65..90)
 }
 
 
-$Matches = New-Object System.Collections.ArrayList
 $Sum = 0
 ForEach($Line in $InData)
 {
@@ -43,7 +42,6 @@ ForEach($Line in $InData)
     {
         If($RightAra.Contains($Letter) -and $Letter -ne ''.ToCharArray())
         {
-            #$Matches.Add($Letter)
             #Write-Host "match found for '$Letter' and the AlphaMap lookup is: '$($AlphaMap[$Letter])'"
             #Write-Host ("Original Line: '$Line'")
             #Write-Host ("Left String: {0} :: Right string {1}" -f ($Line.Substring(0,$HalfIdx)), ($Line.Substring($HalfIdx)))
