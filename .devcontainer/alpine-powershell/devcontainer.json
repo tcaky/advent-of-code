@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+	"name": "Alpine PowerShell",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+	"features": {
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
+		"ghcr.io/tcaky/devcontainer-features/alpine-tzdata:0" : {
+			"TZ": "America/Toronto"
+		}
+		// "ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {},
+		//"ghcr.io/cirolosapio/devcontainers-features/alpine-starship:0": {}
+	},
+
+	"containerEnv": { "TZ": "America/Toronto" },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
+	"postCreateCommand": "post-create-command.sh",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+	"customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "pwsh"
+                //"terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } },
+				//"terminal.integrated.letterSpacing": 0
+            },
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"redhat.vscode-yaml",
+				"mechatroner.rainbow-csv"
+			]
+        }
+	}
+	
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+	// "build": {
+	// 	"dockerfile": "Dockerfile"
+		// "options": ["--init"],
+		// "args": {
+		// 	"UPGRADE_PACKAGES": "true"
+		// }
+	// }
+}
