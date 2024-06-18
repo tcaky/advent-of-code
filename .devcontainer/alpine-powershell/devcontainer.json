@@ -21,7 +21,9 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
-	"postCreateCommand": "post-create-command.sh",
+	"postCreateCommand": "echo \"this is where we are: $(pwd)\" && sudo .devcontainer/alpine-powershell/post-create-command.sh",
+	
+	// "postCreateCommand": "echo \"this is where we are: $(pwd)\"",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
