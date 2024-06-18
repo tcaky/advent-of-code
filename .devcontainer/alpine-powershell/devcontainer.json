@@ -7,7 +7,9 @@
 	"features": {
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
-		"ghcr.io/tcaky/devcontainer-features/alpine-powershell": {},
+		"ghcr.io/tcaky/devcontainer-features/alpine-powershell": {
+			"vscodeShellSwap": true
+		},
 		"ghcr.io/tcaky/devcontainer-features/alpine-tzdata:0" : {
 			"TZ": "America/Toronto"
 		}
@@ -15,12 +17,12 @@
 		//"ghcr.io/cirolosapio/devcontainers-features/alpine-starship:0": {}
 	},
 
-	"containerEnv": { "TZ": "America/Toronto" },
+	// "containerEnv": { "TZ": "America/Toronto" },
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
+	// "postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
 	// "postCreateCommand": "post-create-command.sh",
 
 	// Configure tool-specific properties.
