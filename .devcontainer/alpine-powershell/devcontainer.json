@@ -7,7 +7,7 @@
 	"features": {
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
-		"ghcr.io/tcaky/devcontainer-features/alpine-powershell": {},
+		// "ghcr.io/tcaky/devcontainer-features/alpine-powershell": {},
 		"ghcr.io/tcaky/devcontainer-features/alpine-tzdata:0" : {
 			"TZ": "America/Toronto"
 		}
@@ -21,7 +21,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
-	"postCreateCommand": "echo \"this is where we are: $(pwd)\" && sudo .devcontainer/alpine-powershell/post-create-command.sh",
+	"postCreateCommand": "sudo .devcontainer/alpine-powershell/post-create-command.sh",
 	
 	// "postCreateCommand": "echo \"this is where we are: $(pwd)\"",
 
@@ -30,7 +30,8 @@
 	"customizations": {
         "vscode": {
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "pwsh"
+                "terminal.integrated.defaultProfile.linux": "zsh"
+                // "terminal.integrated.defaultProfile.linux": "pwsh"
             },
 			"extensions": [
 				"ms-azuretools.vscode-docker",
