@@ -7,9 +7,7 @@
 	"features": {
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
-		"ghcr.io/tcaky/devcontainer-features/alpine-powershell": {
-			"vscodeShellSwap": true
-		},
+		"ghcr.io/tcaky/devcontainer-features/alpine-powershell": {},
 		"ghcr.io/tcaky/devcontainer-features/alpine-tzdata:0" : {
 			"TZ": "America/Toronto"
 		}
@@ -23,7 +21,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
-	// "postCreateCommand": "post-create-command.sh",
+	"postCreateCommand": "post-create-command.sh",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
@@ -31,11 +29,10 @@
         "vscode": {
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "pwsh"
-                //"terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } },
-				//"terminal.integrated.letterSpacing": 0
             },
 			"extensions": [
 				"ms-azuretools.vscode-docker",
+				"ms-vscode.powershell",
 				"redhat.vscode-yaml",
 				"mechatroner.rainbow-csv"
 			]
