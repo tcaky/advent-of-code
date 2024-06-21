@@ -37,7 +37,8 @@
 				"ms-azuretools.vscode-docker",
 				"ms-vscode.powershell",
 				"redhat.vscode-yaml",
-				"mechatroner.rainbow-csv"
+				"mechatroner.rainbow-csv",
+				"streetsidesoftware.code-spell-checker"
 			]
         }
 	}
